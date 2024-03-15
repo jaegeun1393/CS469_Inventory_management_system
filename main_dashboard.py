@@ -10,6 +10,13 @@ import csv
 import sys
 import time
 
+def install_dependencies():
+    try:
+        subprocess.check_call(["pip", "install", "-r", "requirements.txt"])
+        print("All dependencies installed.")
+    except subprocess.CalledProcessError as err:
+        print("Error installing dependencies:", err)
+
 def check_table_exists(db_path, table_name):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
@@ -325,7 +332,7 @@ if check_table_exists(db_path, table_name):
     total_consume = get_total_consume()
 months, sales = fetch_consume_data()
 
-
+install_dependencies()
 
 root = tk.Tk()
 root.title("Inventory Management System")
