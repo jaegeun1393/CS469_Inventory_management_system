@@ -41,6 +41,7 @@ def Ask_data_export_import():
 
             for row in csv_reader:
                 try:
+                    row['image'] = row['image'][2:-1] if isinstance(row['image'], str) else row['image']
                     cur.execute('''INSERT INTO items (name, image, price, selling_price, quantity, location, stock_date, notes) VALUES (:name, :image, :price, :selling_price, :quantity, :location, :stock_date, :notes)''', row)
                 except sqlite3.IntegrityError as e:
                     print(f"IntegrityError: {e} for row: {row}")
