@@ -191,7 +191,7 @@ create_consume()
 
 def i_loc():
     global db_path, total_quantity, total_month_quantity, store_items, total_consume
-    script_path = os.path.abspath("location.py") 
+    script_path = os.path.abspath(r".\scripts\location.py")
     loading = subprocess.Popen(["python", script_path])
 
     while loading.poll() is None:
@@ -206,7 +206,7 @@ def i_loc():
 
 def i_search():
     global db_path, total_quantity, total_month_quantity, store_items, total_consume
-    script_path = os.path.abspath("search.py") 
+    script_path = os.path.abspath(r".\scripts\search.py")
     loading = subprocess.Popen(["python", script_path])
 
     while loading.poll() is None:
@@ -221,7 +221,7 @@ def i_search():
 
 def i_add():
     global db_path, total_quantity, total_month_quantity, store_items, total_consume
-    script_path = os.path.abspath("Inventory.py") 
+    script_path = os.path.abspath(r".\scripts\Inventory.py")
     loading = subprocess.Popen(["python", script_path])
 
     while loading.poll() is None:
@@ -236,7 +236,7 @@ def i_add():
 
 def i_edit():
     global db_path, total_quantity, total_month_quantity, store_items, total_consume
-    script_path = os.path.abspath("price_edit.py") 
+    script_path = os.path.abspath(r".\scripts\price_edit.py")
     loading = subprocess.Popen(["python", script_path])
 
     while loading.poll() is None:
@@ -251,7 +251,7 @@ def i_edit():
 
 def i_coonsume():
     global db_path, total_quantity, total_month_quantity, store_items, total_consume
-    script_path = os.path.abspath("item_use.py") 
+    script_path = os.path.abspath(r".\scripts\item_use.py")
     loading = subprocess.Popen(["python", script_path])
 
     while loading.poll() is None:
