@@ -8,6 +8,11 @@ import sqlite3
 from datetime import datetime
 import io
 
+
+
+
+
+
 def open_item_panel(item_id):
     print(item_id)
 
@@ -85,6 +90,8 @@ def open_item_panel(item_id):
 
     tk.Button(item_window, text="Save Changes", command=update_quantity).pack()
 
+
+
 def base64_convert(base64_string, tk_label):
     image_data = base64.b64decode(base64_string)
     
@@ -95,6 +102,9 @@ def base64_convert(base64_string, tk_label):
     
     tk_label.configure(image=photo)
     tk_label.image = photo 
+
+
+
 
 def refresh_list(search_query=None):
     for widget in item_table.winfo_children():
@@ -138,6 +148,7 @@ def refresh_list(search_query=None):
 
 def scroll(event):
     root_item.configure(scrollregion=root_item.bbox("all"))
+
 
 def show_item_list():
     global item_table, headertitle, root_item, v_scroll, h_scroll

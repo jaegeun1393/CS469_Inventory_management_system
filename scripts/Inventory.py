@@ -8,6 +8,7 @@ import sqlite3
 import datetime
 import io
 
+
 def connect_db():
     conn = sqlite3.connect('stock.db')
     cur = conn.cursor()
@@ -70,6 +71,8 @@ def add_preset(preset_name, item_name, price, selling_price, location):
     cur = conn.cursor()
     cur.execute('INSERT INTO presets VALUES (?, ?, ?, ?, ?)', (preset_name, item_name, price, selling_price, location))
     conn.commit()
+
+    
     
 def remove_pre(preset_name):
     conn = sqlite3.connect('stock.db')
