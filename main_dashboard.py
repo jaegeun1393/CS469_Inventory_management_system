@@ -411,9 +411,9 @@ table_width = int(window_width * table_width_ratio)
 
 fig, ax = plt.subplots(figsize=(5, 3)) 
 ax.plot(months, sales)
-ax.set_title("Produce Sales in Thousands (USD)")
+ax.set_title("Monthly Item Consumption Graph")
 ax.set_xlabel("Month")
-ax.set_ylabel("Sales")
+ax.set_ylabel("Uses")
 
 canvas = FigureCanvasTkAgg(fig, master=main_content)
 canvas.draw()
